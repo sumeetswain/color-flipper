@@ -13,9 +13,15 @@
         text-align: center;
         position: absolute;
         top: 40%;
-        left: 48%;
+        left: 40%;
       }
-      .clicker {
+      #hex {
+        align-items: center;
+        position: absolute;
+        top: 46%;
+        left: 43%;
+      }
+      #rgb {
         align-items: center;
         position: absolute;
         top: 46%;
@@ -25,22 +31,24 @@
   </head>
   <body id="newbody">
     <div class="maintext" id="newtext">Background Color : Red</div>
-    <button class="clicker" onclick="rng()">Click here to change</button>
+    <button class="clicker" id="hex" onclick="new_hex()">New Hexcolor</button>
+    <button class="clicker" id="rgb" onclick="rgb()">New RBG color</button>
   </body>
   <script>
-    // let hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-    // let rng = () => {
-    //   let hexcolor = "#";
-    //   for (i = 0; i < 6; i++) {
-    //     hexcolor += hex[Math.floor(Math.random() * hex.length)];
-    //   }
-    //   console.log(hexcolor);
-    // document.body.style.backgroundColor = hexcolor;
-    // document.getElementById("newtext").innerHTML = "Background Color : "+ hexcolor;
-    // document.getElementById("newbody").style.backgroundcolor = "#E8AB98";
-    // document.getElementsByTagName("body").style.color=hexcolor
-    // };
-    let rng = () => {
+    let hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+    let new_hex = () => {
+      let hexcolor = "#";
+      for (i = 0; i < 6; i++) {
+        hexcolor += hex[Math.floor(Math.random() * hex.length)];
+      }
+      console.log(hexcolor);
+      document.body.style.backgroundColor = hexcolor;
+      document.getElementById("newtext").innerHTML =
+        "Background Color : " + hexcolor;
+      document.getElementById("newbody").style.backgroundcolor = "#E8AB98";
+      document.getElementsByTagName("body").style.color = hexcolor;
+    };
+    let rgb = () => {
       let r = Math.floor(Math.random() * 255);
       let g = Math.floor(Math.random() * 255);
       let b = Math.floor(Math.random() * 255);
